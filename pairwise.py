@@ -3,6 +3,8 @@ import datums as dat
 resloop = []
 xtrav = 0
 
+print(dat.matrix)
+
 for x in dat.matrix:
     resloop.append([])
     inc = 0
@@ -16,3 +18,6 @@ for x in dat.matrix:
             val*=-1
         resloop[inc].append(val ** .5)
         inc++
+
+print('\n\n')
+print(resloop)
