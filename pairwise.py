@@ -3,15 +3,17 @@ def pairwise(dat):
     print(dat)
 
     matrix = []
+    n = len(dat)
+    d = len(dat[0])
     xtrav = 0
 
-    for x in dat:
+    while xtrav < n:
         matrix.append([])
         inc = 0
-        while inc < len(dat):
+        while inc < n:
             ytrav = 0
             val = 0
-            for y in x:
+            while ytrav < d:
                 val += (dat[xtrav][ytrav] - dat[inc][ytrav])**2
                 ytrav+=1
             if (val<0):

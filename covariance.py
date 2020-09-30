@@ -3,10 +3,11 @@ def correl(dat):
     mean = []
     matrix = []
 
-    d = len(dat)
+    n = len(dat)
+    d = len(dat[0])
     xtrav = 0
 
-    while xtrav < d:
+    while xtrav < n:
         avg = 0
         ytrav = 0
         while ytrav < d:
@@ -21,7 +22,7 @@ def correl(dat):
 
     xtrav2 = 0
 
-    while xtrav2 < d:
+    while xtrav2 < n:
         ytrav2 = 0
         covar.append([])
         while ytrav2 < d:
