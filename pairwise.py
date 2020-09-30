@@ -3,6 +3,7 @@ import datums as dat
 matrix = []
 xtrav = 0
 
+print('Dataset:\n')
 print(dat.matrix)
 
 for x in dat.matrix:
@@ -21,4 +22,5 @@ for x in dat.matrix:
     xtrav+=1
 
 print('\n\n')
+print('Distance:\n')
 print(matrix)
