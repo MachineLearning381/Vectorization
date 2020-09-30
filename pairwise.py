@@ -13,11 +13,11 @@ for x in dat.matrix:
         val = 0
         for y in x:
             val += (dat.matrix[xtrav][ytrav] - dat.matrix[inc][ytrav]) ** 2
-            ytrav++
-        if (val<0)
+            ytrav+=1
+        if (val<0):
             val*=-1
         resloop[inc].append(val ** .5)
-        inc++
+        inc+=1
 
 print('\n\n')
 print(resloop)
