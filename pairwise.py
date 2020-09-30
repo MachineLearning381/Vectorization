@@ -4,6 +4,7 @@ resloop = []
 xtrav = 0
 
 print(dat.matrix)
+print(len(dat.matrix))
 
 for x in dat.matrix:
     resloop.append([])
@@ -16,8 +17,9 @@ for x in dat.matrix:
             ytrav+=1
         if (val<0):
             val*=-1
-        resloop[inc].append(val ** .5)
+        resloop[xtrav].append(round(val ** .5,1))
         inc+=1
+    xtrav+=1
 
 print('\n\n')
 print(resloop)
