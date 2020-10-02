@@ -1,16 +1,24 @@
 import numpy as np
+import time
+
 
 X = np.array([ [1,2,3],[4,5,6],[7,8,9] ]);
 
+def vecpair(dat):
 
-Z = np.dot(X,np.transpose(X))
+    start_time = time.time()
 
-v = np.diagonal(Z)
-Z = np.multiply(Z,2)
+    Z = np.dot(dat,np.transpose(dat))
 
-Z = np.transpose(Z)-v
-Z = abs(np.transpose(Z)-v)
+    v = np.diagonal(Z)
+    Z = np.multiply(Z,2)
 
-Z = Z**0.5
+    Z = np.transpose(Z)-v
+    Z = abs(np.transpose(Z)-v)
 
-print(Z)
+    Z = Z**0.5
+
+    print('\nNumpy Distance\n')
+    print(Z)
+
+    print("PAIRWISEVECTOR--- %s seconds ---" % (time.time() - start_time))

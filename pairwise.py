@@ -1,4 +1,9 @@
+import time
+
 def pairwise(dat):
+
+    start_time = time.time()
+
     print('Dataset:\n')
     print(dat)
 
@@ -25,3 +30,5 @@ def pairwise(dat):
     print('\n\n')
     print('Distance:\n')
     print(matrix)
+
+    print("PAIRWISE--- %s seconds ---" % (time.time() - start_time))

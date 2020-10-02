@@ -1,20 +1,25 @@
+import time
+
 def correl(dat):
+
+    start_time = time.time()
+
     covar = []
     mean = []
     matrix = []
 
     n = len(dat)
     d = len(dat[0])
-    xtrav = 0
+    ytrav = 0
 
-    while xtrav < n:
+    while ytrav < d:
         avg = 0
-        ytrav = 0
-        while ytrav < d:
+        xtrav = 0
+        while xtrav < n:
             avg+=dat[xtrav][ytrav]
-            ytrav+=1
-        mean.append(round(avg/d,1))
-        xtrav+=1
+            xtrav+=1
+        mean.append(round(avg/n,1))
+        ytrav+=1
 
     print('\n\n')
     print('Mean:\n')
@@ -22,14 +27,14 @@ def correl(dat):
 
     xtrav2 = 0
 
-    while xtrav2 < n:
+    while xtrav2 < d:
         ytrav2 = 0
         covar.append([])
         while ytrav2 < d:
             val = 0
             z = 0
-            while z < d:
-                val+=(dat[xtrav2][z]-mean[xtrav2])*(dat[ytrav2][z]-mean[ytrav2])
+            while z < n:
+                val+=(dat[z][xtrav2]-mean[xtrav2])*(dat[z][ytrav2]-mean[ytrav2])
                 z+=1
             covar[xtrav2].append(round(val/(d-1),1))
             ytrav2+=1
@@ -52,3 +57,5 @@ def correl(dat):
     print('\n\n')
     print('Correlation:\n')
     print(matrix)
+
+    print("CORRELATION--- %s seconds ---" % (time.time() - start_time))
